@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3254293573598808988}
   - component: {fileID: 3254293573598808989}
   - component: {fileID: 5956292953313395192}
-  - component: {fileID: 8928113055909063819}
+  - component: {fileID: 8376240397503071717}
   m_Layer: 0
   m_Name: BombSprite
-  m_TagString: Untagged
+  m_TagString: Boom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +49,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1f55a04a509ec164ab29017e653d1940, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -120,8 +121,8 @@ MonoBehaviour:
   destroyTime: 2
   Explosion: {fileID: 7116684571128811611, guid: f2cc8e2f8316fe6438f94ad17e0b1cb2,
     type: 3}
---- !u!60 &8928113055909063819
-PolygonCollider2D:
+--- !u!58 &8376240397503071717
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -130,40 +131,9 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.85333335, y: 0.85333335}
-    newSize: {x: 0.64, y: 0.64}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.22, y: -0.026666667}
-      - {x: 0.2, y: 0.04}
-      - {x: 0.10666667, y: 0.11333334}
-      - {x: 0.11333334, y: 0.21333334}
-      - {x: 0.16, y: 0.24666667}
-      - {x: 0.18, y: 0.31333333}
-      - {x: 0.12666667, y: 0.35333335}
-      - {x: 0.07333334, y: 0.35333335}
-      - {x: 0.026666667, y: 0.33333334}
-      - {x: 0.033333335, y: 0.23333333}
-      - {x: -0.026666667, y: 0.16666667}
-      - {x: -0.18, y: 0.086666666}
-      - {x: -0.24666667, y: 0.02}
-      - {x: -0.26666668, y: -0.04}
-      - {x: -0.26666668, y: -0.15333334}
-      - {x: -0.19333334, y: -0.26000002}
-      - {x: -0.13333334, y: -0.3}
-      - {x: -0.07333334, y: -0.31333333}
-      - {x: 0.04, y: -0.31333333}
-      - {x: 0.1, y: -0.29333335}
-      - {x: 0.15333334, y: -0.26666668}
-      - {x: 0.22, y: -0.16}
+  m_Offset: {x: -0.0000001192093, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2279721

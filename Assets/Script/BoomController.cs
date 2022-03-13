@@ -5,14 +5,18 @@ using UnityEngine;
 public class BoomController : MonoBehaviour
 {
     public Vector3 target;
-    public float moveSpeed = 5;
+    public float moveSpeed = 1;
     public float destroyTime = 2;
     public GameObject Explosion;
 
+    private GameObject GameController;
 
     void Start()
     {
-        // huỷ một vật thể sau thời gian đã định sẵn
+        // construct value
+        GameController = GameObject.FindGameObjectWithTag("GameController");
+
+        //destroy this obj 
         Destroy(gameObject, destroyTime);
     }
 
@@ -23,8 +27,13 @@ public class BoomController : MonoBehaviour
 
     private void OnDestroy()
     {
-       GameObject exp = Instantiate(Explosion, transform.position, Quaternion.identity) as GameObject;
-       Destroy(exp, 0.5f);
+        GameController.GetComponent<GameController>().AddScore();
+
+        // ganerate an explosion at boom postion after the Boom is destroy
+        GameObject expl = Instantiate(Explosion, transform.position, Quaternion.identity) as GameObject;
+
+        // destroy after 0.5 second
+        Destroy(expl, 0.1f);
     }
 
 }
